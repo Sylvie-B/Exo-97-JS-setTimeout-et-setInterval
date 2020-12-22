@@ -11,3 +11,22 @@ time.addEventListener('click', () => {
     }, 2000)
 })
 
+let inter = document.getElementById('interval-div');
+let start = document.getElementById('interval-start');
+let stop = document.getElementById('interval-stop');
+let t = 0;
+let newDiv = document.createElement('div');
+
+start.addEventListener('click', function () {
+    let count = setInterval(function () {
+        if(t < 60){
+            newDiv.innerHTML = t.toString();
+            inter.appendChild(newDiv);
+            t ++;
+        }
+        stop.addEventListener('click', () => {
+            clearInterval(count);
+        })
+    }, 1000);
+})
+
