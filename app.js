@@ -19,14 +19,12 @@ let newDiv = document.createElement('div');
 
 start.addEventListener('click', function () {
     let count = setInterval(function () {
-        if(t < 60){
             newDiv.innerHTML = t.toString();
             inter.appendChild(newDiv);
             t ++;
-        }
-        stop.addEventListener('click', () => {
-            clearInterval(count);
-        })
+            stop.addEventListener('click', () => {
+                clearInterval(count);
+            })
     }, 1000);
 })
 
